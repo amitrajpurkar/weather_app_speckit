@@ -51,25 +51,16 @@ description: "Task list for Monthly Weather Trends feature"
 
 ### Backend Tests for User Story 1 (US1)
 
-- [ ] T010 [P] [US1] Add unit tests for yearly aggregation logic in `backend/tests/unit/test_yearly_aggregation.py`
-- [ ] T011 [P] [US1] Add integration tests for `/api/v1/yearly-summary` in `backend/tests/integration/test_yearly_summary_endpoint.py`
-
-### Backend Implementation for User Story 1 (US1)
-
-- [ ] T012 [US1] Implement yearly aggregation service using pandas in `backend/src/domain/services/yearly_aggregation_service.py`
-- [ ] T013 [US1] Implement `/api/v1/yearly-summary` FastAPI endpoint in `backend/src/api/v1/yearly_summary.py` using contracts from `specs/1-monthly-weather-trends/contracts/api-contracts.md`
-- [ ] T014 [US1] Wire yearly summary router into FastAPI app in `backend/src/main.py`
-
-### Frontend Tests for User Story 1 (US1)
-
-- [ ] T015 [P] [US1] Add unit tests for yearly averages chart component in `frontend/tests/unit/YearlyAveragesChart.test.tsx`
-- [ ] T016 [US1] Add basic E2E test for loading yearly overview in `frontend/tests/e2e/yearly_overview.spec.ts`
-
-### Frontend Implementation for User Story 1 (US1)
-
-- [ ] T017 [US1] Implement typed API client for yearly summary in `frontend/lib/apiClient.ts`
-- [ ] T018 [US1] Implement `YearlyAveragesChart` component in `frontend/components/YearlyAveragesChart.tsx` showing two side-by-side charts for average temperature and humidity
-- [ ] T019 [US1] Implement main page layout in `frontend/app/page.tsx` to display yearly averages chart using data from `/api/v1/yearly-summary`
+- [x] T010 [P] [US1] Add unit tests for yearly aggregation logic in `backend/tests/unit/test_yearly_aggregation.py`
+- [x] T011 [P] [US1] Add integration tests for `/api/v1/yearly-summary` in `backend/tests/integration/test_yearly_summary_endpoint.py`
+- [x] T012 [US1] Implement yearly aggregation service using pandas in `backend/src/domain/services/yearly_aggregation_service.py`
+- [x] T013 [US1] Implement `/api/v1/yearly-summary` FastAPI endpoint in `backend/src/api/v1/yearly_summary.py` using contracts from `specs/1-monthly-weather-trends/contracts/api-contracts.md`
+- [x] T014 [US1] Wire yearly summary router into FastAPI app in `backend/src/main.py`
+- [x] T015 [P] [US1] Add unit tests for yearly averages chart component in `frontend/tests/unit/YearlyAveragesChart.test.tsx`
+- [x] T016 [US1] Add basic E2E test for loading yearly overview in `frontend/tests/e2e/yearly_overview.spec.ts`
+- [x] T017 [US1] Implement typed API client for yearly summary in `frontend/lib/apiClient.ts`
+- [x] T018 [US1] Implement `YearlyAveragesChart` component in `frontend/components/YearlyAveragesChart.tsx` showing two side-by-side charts for average temperature and humidity
+- [x] T019 [US1] Implement main page layout in `frontend/app/page.tsx` to display yearly averages chart using data from `/api/v1/yearly-summary`
 
 **Checkpoint**: User Story 1 complete – yearly averages charts work end-to-end and are independently testable.
 
