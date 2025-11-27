@@ -22,10 +22,10 @@ description: "Task list for Monthly Weather Trends feature"
 
 **Purpose**: Project initialization and basic backend/frontend structure using uv, FastAPI, and Next.js.
 
-- [ ] T001 Create backend project structure per plan in `backend/` (src/, tests/, domain/, api/, infrastructure/)
-- [ ] T002 Initialize uv-managed Python 3.12 environment and backend dependencies (FastAPI, uvicorn, pandas, pydantic, pytest, pytest-cov) in `backend/`
-- [ ] T003 Initialize frontend Next.js (TypeScript, app router) project in `frontend/` with eslint/prettier configs
-- [ ] T004 [P] Add shared Git/CI configuration for running backend and frontend tests with coverage thresholds
+- [x] T001 Create backend project structure per plan in `backend/` (src/, tests/, domain/, api/, infrastructure/)
+- [x] T002 Initialize uv-managed Python 3.12 environment and backend dependencies (FastAPI, uvicorn, pandas, pydantic, pytest, pytest-cov) in `backend/`
+- [x] T003 Initialize frontend Next.js (TypeScript, app router) project in `frontend/` with eslint/prettier configs
+- [x] T004 [P] Add shared Git/CI configuration for running backend and frontend tests with coverage thresholds
 
 ---
 
@@ -33,11 +33,11 @@ description: "Task list for Monthly Weather Trends feature"
 
 **Purpose**: Core backend infrastructure that MUST be complete before any user story implementation.
 
-- [ ] T005 Create `backend/src/infrastructure/csv_loader.py` to read `src/main/resources/WeatherData.csv` using pandas
-- [ ] T006 Create domain models in `backend/src/domain/models/` for `WeatherObservation`, `MonthlySummary`, `DailyAggregate`, and `MonthlyTrend`
-- [ ] T007 Create aggregation and trend services in `backend/src/domain/services/` for yearly summaries and monthly trends
-- [ ] T008 Implement FastAPI app entrypoint in `backend/src/main.py` and basic router wiring under `backend/src/api/v1/`
-- [ ] T009 Add initial backend unit test configuration in `backend/tests/unit/` and `backend/tests/integration/` (pytest.ini or equivalent)
+- [x] T005 Create `backend/src/infrastructure/csv_loader.py` to read `src/main/resources/WeatherData.csv` using pandas
+- [x] T006 Create domain models in `backend/src/domain/models/` for `WeatherObservation`, `MonthlySummary`, `DailyAggregate`, and `MonthlyTrend`
+- [x] T007 Create aggregation and trend services in `backend/src/domain/services/` for yearly summaries and monthly trends
+- [x] T008 Implement FastAPI app entrypoint in `backend/src/main.py` and basic router wiring under `backend/src/api/v1/`
+- [x] T009 Add initial backend unit test configuration in `backend/tests/unit/` and `backend/tests/integration/` (pytest.ini or equivalent)
 
 **Checkpoint**: Backend foundation ready - user story implementation and tests can now begin.
 
