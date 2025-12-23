@@ -1,13 +1,12 @@
 """API endpoint for monthly trend (daily aggregates + most common condition)."""
 
-from pathlib import Path
 from typing import List
 
 from fastapi import APIRouter, HTTPException, Query
 
 from ...domain.models.weather import WeatherObservation
 from ...domain.services.monthly_trend_service import compute_monthly_trend
-from ...infrastructure.csv_loader import load_weather_data
+from ...infrastructure.csv_loader import load_weather_data, resolve_weather_csv_path
 from .dtos.monthly_trend_dtos import MonthlyTrendResponse, DailyAggregateDto
 
 router = APIRouter()
@@ -33,9 +32,7 @@ def get_monthly_trend(month: int = Query(..., ge=1, le=12, description="Month nu
     in the latest full year.
     """
     # Load and filter data
-    df = load_weather_data(
-        Path(__file__).parent.parent.parent.parent / "src" / "main" / "resources" / "WeatherData.csv"
-    )
+    df = load_weather_data(resolve_weather_csv_path())
     from ...domain.services.yearly_aggregation_service import filter_to_latest_full_year
     df_latest = filter_to_latest_full_year(df)
 

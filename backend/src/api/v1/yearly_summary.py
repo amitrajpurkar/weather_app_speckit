@@ -1,6 +1,5 @@
 """API endpoint for yearly monthly averages."""
 
-from pathlib import Path
 from typing import List
 
 from fastapi import APIRouter
@@ -9,7 +8,7 @@ from ...domain.services.yearly_aggregation_service import (
     compute_yearly_monthly_averages,
     filter_to_latest_full_year,
 )
-from ...infrastructure.csv_loader import load_weather_data
+from ...infrastructure.csv_loader import load_weather_data, resolve_weather_csv_path
 from .dtos.yearly_summary_dtos import YearlySummaryResponse, MonthlySummaryDto
 
 router = APIRouter()
@@ -35,9 +34,7 @@ def get_yearly_summary() -> YearlySummaryResponse:
     Return monthly average temperature and humidity for the latest full year.
     """
     # Load and filter data
-    df = load_weather_data(
-        Path(__file__).parent.parent.parent.parent / "src" / "main" / "resources" / "WeatherData.csv"
-    )
+    df = load_weather_data(resolve_weather_csv_path())
     df_latest = filter_to_latest_full_year(df)
 
     # Convert to domain objects

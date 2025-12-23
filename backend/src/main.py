@@ -1,23 +1,35 @@
 """FastAPI application entrypoint."""
 
 from contextlib import asynccontextmanager
+import logging
+import os
 from pathlib import Path
 
 from fastapi import FastAPI
 
 from .api.v1 import yearly_summary, monthly_trend
-from .infrastructure.csv_loader import load_weather_data
+from .infrastructure.csv_loader import load_weather_data, resolve_weather_csv_path
 
 
 # Cache the DataFrame at startup; in a real app you might add file watching.
 _DF = None
+
+logger = logging.getLogger(__name__)
 
 
 def get_weather_df() -> "pd.DataFrame":
     """Return the cached weather DataFrame; load it once at startup."""
     global _DF
     if _DF is None:
-        csv_path = Path(__file__).parent.parent.parent / "src" / "main" / "resources" / "WeatherData.csv"
+        csv_path = resolve_weather_csv_path()
+        logger.info(
+            "Resolved WeatherData.csv path",
+            extra={
+                "cwd": str(Path.cwd().resolve()),
+                "module_file": str(Path(__file__).resolve()),
+                "csv_path": str(csv_path),
+            },
+        )
         _DF = load_weather_data(csv_path)
     return _DF
 
