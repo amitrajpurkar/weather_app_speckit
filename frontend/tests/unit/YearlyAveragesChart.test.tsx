@@ -3,6 +3,10 @@ import { render, screen } from '@testing-library/react';
 import YearlyAveragesChart from '../../components/YearlyAveragesChart';
 import { YearlySummaryResponse } from '../../lib/apiClient';
 
+jest.mock('react-chartjs-2', () => ({
+  Line: () => <div data-testid="mock-line-chart" />,
+}));
+
 const mockData: YearlySummaryResponse = {
   year: 2024,
   months: [
@@ -26,6 +30,7 @@ describe('YearlyAveragesChart', () => {
     render(<YearlyAveragesChart data={mockData} />);
     expect(screen.getByText(/Average Temperature by Month/i)).toBeInTheDocument();
     expect(screen.getByText(/Average Humidity by Month/i)).toBeInTheDocument();
+    expect(screen.getAllByTestId('mock-line-chart')).toHaveLength(2);
   });
 
   it('displays the correct year in the title', () => {

@@ -9,6 +9,7 @@ const config = {
   coverageReporters: ['text', 'lcov', 'html'],
   testEnvironment: 'jsdom',
   setupFilesAfterEnv: ['<rootDir>/jest.setup.ts'],
+  testPathIgnorePatterns: ['<rootDir>/tests/e2e/'],
 };
 
 export default createJestConfig(config);

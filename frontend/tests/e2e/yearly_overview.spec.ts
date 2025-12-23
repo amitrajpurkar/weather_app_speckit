@@ -2,6 +2,20 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Yearly Overview', () => {
   test('loads page and displays yearly averages charts', async ({ page }) => {
+    await page.route('**/api/v1/yearly-summary', async (route) => {
+      await route.fulfill({
+        status: 200,
+        contentType: 'application/json',
+        body: JSON.stringify({
+          year: 2024,
+          months: [
+            { month: 1, avg_temperature: 5, avg_humidity: 70, observation_count: 2 },
+            { month: 2, avg_temperature: 6, avg_humidity: 65, observation_count: 2 },
+          ],
+        }),
+      });
+    });
+
     await page.goto('/');
     // Wait for the main dashboard to load
     await expect(page.getByText('Weather Trends Dashboard')).toBeVisible();
@@ -9,7 +23,7 @@ test.describe('Yearly Overview', () => {
     await expect(page.getByText('Average Temperature by Month')).toBeVisible();
     await expect(page.getByText('Average Humidity by Month')).toBeVisible();
     // Verify a year is displayed (e.g., 2024)
-    await expect(page.locator('h2')).toContainText(/\d{4}/);
+    await expect(page.getByRole('heading', { name: /Yearly Averages for\s+\d{4}/i })).toBeVisible();
   });
 
   test('shows no-data message when backend returns empty', async ({ page }: any) => {

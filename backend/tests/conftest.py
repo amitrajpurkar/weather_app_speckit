@@ -1,9 +1,12 @@
 """Shared pytest configuration and fixtures."""
 
+import sys
 import pandas as pd
 import pytest
 from datetime import datetime
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 from src.domain.models.weather import WeatherObservation
 from src.infrastructure.csv_loader import load_weather_data

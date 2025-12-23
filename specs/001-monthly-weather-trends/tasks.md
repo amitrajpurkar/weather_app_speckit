@@ -74,8 +74,8 @@ description: "Task list for Monthly Weather Trends feature"
 
 ### Backend Tests for User Story 2 (US2)
 
-- [ ] T020 [P] [US2] Add unit tests for monthly trend aggregation in `backend/tests/unit/test_monthly_trend_aggregation.py`
-- [ ] T021 [P] [US2] Add integration tests for `/api/v1/monthly-trend` in `backend/tests/integration/test_monthly_trend_endpoint.py`
+- [x] T020 [P] [US2] Add unit tests for monthly trend aggregation in `backend/tests/unit/test_monthly_trend_aggregation.py`
+- [x] T021 [P] [US2] Add integration tests for `/api/v1/monthly-trend` in `backend/tests/integration/test_monthly_trend_endpoint.py`
 
 ### Backend Implementation for User Story 2 (US2)
 
@@ -85,16 +85,16 @@ description: "Task list for Monthly Weather Trends feature"
 
 ### Frontend Tests for User Story 2 (US2)
 
-- [ ] T025 [P] [US2] Add unit tests for month selector component in `frontend/tests/unit/MonthSelector.test.tsx`
-- [ ] T026 [P] [US2] Add unit tests for monthly trend view component in `frontend/tests/unit/MonthlyTrendView.test.tsx`
-- [ ] T027 [US2] Add E2E test for selecting a month and viewing trend in `frontend/tests/e2e/monthly_trend.spec.ts`
+- [x] T025 [P] [US2] Add unit tests for month selector component in `frontend/tests/unit/MonthSelector.test.tsx`
+- [x] T026 [P] [US2] Add unit tests for monthly trend view component in `frontend/tests/unit/MonthlyTrendView.test.tsx`
+- [x] T027 [US2] Add E2E test for selecting a month and viewing trend in `frontend/tests/e2e/monthly_trend.spec.ts`
 
 ### Frontend Implementation for User Story 2 (US2)
 
-- [ ] T028 [US2] Implement `MonthSelector` component in `frontend/components/MonthSelector.tsx` to allow choosing a month from available data
-- [ ] T029 [US2] Implement monthly trend API client function in `frontend/lib/apiClient.ts` to call `/api/v1/monthly-trend`
-- [ ] T030 [US2] Implement `MonthlyTrendView` component in `frontend/components/MonthlyTrendView.tsx` to display daily temperature/humidity charts and most common condition
-- [ ] T031 [US2] Integrate `MonthSelector` and `MonthlyTrendView` into `frontend/app/page.tsx` so selecting a month updates the trend view
+- [x] T028 [US2] Implement `MonthSelector` component in `frontend/components/MonthSelector.tsx` to allow choosing a month from available data
+- [x] T029 [US2] Implement monthly trend API client function in `frontend/lib/apiClient.ts` to call `/api/v1/monthly-trend`
+- [x] T030 [US2] Implement `MonthlyTrendView` component in `frontend/components/MonthlyTrendView.tsx` to display daily temperature/humidity charts and most common condition
+- [x] T031 [US2] Integrate `MonthSelector` and `MonthlyTrendView` into `frontend/app/page.tsx` so selecting a month updates the trend view
 
 **Checkpoint**: User Story 2 complete – month selection and detailed trends work end-to-end and are independently testable.
 

@@ -1,5 +1,6 @@
 """API endpoint for yearly monthly averages."""
 
+from pathlib import Path
 from typing import List
 
 from fastapi import APIRouter
@@ -10,7 +11,7 @@ from ...domain.services.yearly_aggregation_service import (
     filter_to_latest_full_year,
 )
 from ...infrastructure.csv_loader import load_weather_data
-from ..dtos.yearly_summary_dtos import YearlySummaryResponse, MonthlySummaryDto
+from .dtos.yearly_summary_dtos import YearlySummaryResponse, MonthlySummaryDto
 
 router = APIRouter()
 

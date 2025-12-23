@@ -41,34 +41,23 @@ def compute_monthly_trend(
         conditions_by_day[day].append(obs.condition)
 
     daily_aggregates = []
-    for day in range(1, 32):
+    for day in sorted(day_data.keys()):
         temps = day_data[day]["temps"]
         humidities = day_data[day]["humidities"]
-        if temps:  # at least one observation for this day
-            avg_temp = sum(temps) / len(temps)
-            avg_hum = sum(humidities) / len(humidities)
-            daily_aggregates.append(
-                DailyAggregate(
-                    year=year,
-                    month=month,
-                    day=day,
-                    avg_temperature=avg_temp,
-                    avg_humidity=avg_hum,
-                    observation_count=len(temps),
-                )
+        if not temps:
+            continue
+        avg_temp = sum(temps) / len(temps)
+        avg_hum = sum(humidities) / len(humidities)
+        daily_aggregates.append(
+            DailyAggregate(
+                year=year,
+                month=month,
+                day=day,
+                avg_temperature=avg_temp,
+                avg_humidity=avg_hum,
+                observation_count=len(temps),
             )
-        else:
-            # No data for this day
-            daily_aggregates.append(
-                DailyAggregate(
-                    year=year,
-                    month=month,
-                    day=day,
-                    avg_temperature=None,
-                    avg_humidity=None,
-                    observation_count=0,
-                )
-            )
+        )
 
     # Determine most common condition across the month
     all_conditions = [obs.condition for obs in observations if obs.condition]

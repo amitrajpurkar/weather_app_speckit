@@ -8,7 +8,7 @@ from fastapi import APIRouter, HTTPException, Query
 from ...domain.models.weather import WeatherObservation, MonthlyTrend
 from ...domain.services.monthly_trend_service import compute_monthly_trend
 from ...infrastructure.csv_loader import load_weather_data
-from ..dtos.monthly_trend_dtos import MonthlyTrendResponse, DailyAggregateDto
+from .dtos.monthly_trend_dtos import MonthlyTrendResponse, DailyAggregateDto
 
 router = APIRouter()
 
