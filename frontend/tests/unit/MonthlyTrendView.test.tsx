@@ -29,4 +29,13 @@ describe('MonthlyTrendView', () => {
     expect(await screen.findByText(/clear/i)).toBeInTheDocument();
     expect(await screen.findByText(/Year:\s*2024/i)).toBeInTheDocument();
   });
+
+  it('shows error when fetch fails', async () => {
+    (fetchMonthlyTrend as jest.Mock).mockRejectedValue(new Error('Backend down'));
+
+    render(<MonthlyTrendView month={1} />);
+
+    expect(await screen.findByText(/Error:/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Backend down/i)).toBeInTheDocument();
+  });
 });

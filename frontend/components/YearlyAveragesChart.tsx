@@ -57,7 +57,7 @@ export default function YearlyAveragesChart({ data }: Props) {
     datasets: [
       {
         label: 'Avg Humidity (%)',
-        data: data.months.map((m: any) => m.avg_humidity ?? null),
+        data: data.months.map((m) => m.avg_humidity ?? null),
         borderColor: 'rgb(54, 162, 235)',
         backgroundColor: 'rgba(54, 162, 235, 0.5)',
         tension: 0.1,

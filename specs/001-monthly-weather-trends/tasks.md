@@ -127,11 +127,11 @@ description: "Task list for Monthly Weather Trends feature"
 
 **Purpose**: Improvements that affect multiple user stories and non-functional requirements.
 
-- [ ] T036 [P] Add logging and error handling for CSV load and aggregation in `backend/src/infrastructure/csv_loader.py` and domain services
-- [ ] T037 [P] Add frontend error states for missing/invalid data in `frontend/app/page.tsx` and relevant components
-- [ ] T038 [P] Configure coverage reporting to enforce ≥90% coverage in backend and frontend test commands (CI and local)
-- [ ] T039 [P] Update `specs/1-monthly-weather-trends/quickstart.md` with steps to run backend/frontend, tests, and view coverage reports
-- [ ] T040 Perform final code cleanup and refactoring across `backend/` and `frontend/` to maintain SOLID boundaries and Next.js best practices
+- [x] T036 [P] Add logging and error handling for CSV load and aggregation in `backend/src/infrastructure/csv_loader.py` and domain services
+- [x] T037 [P] Add frontend error states for missing/invalid data in `frontend/app/page.tsx` and relevant components
+- [x] T038 [P] Configure coverage reporting to enforce ≥90% coverage in backend and frontend test commands (CI and local)
+- [x] T039 [P] Update `specs/1-monthly-weather-trends/quickstart.md` with steps to run backend/frontend, tests, and view coverage reports
+- [x] T040 Perform final code cleanup and refactoring across `backend/` and `frontend/` to maintain SOLID boundaries and Next.js best practices
 
 ---
 

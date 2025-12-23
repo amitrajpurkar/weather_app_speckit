@@ -31,6 +31,8 @@ export default function HomePage() {
     return <div className="p-4 text-red-500">Error: {error}</div>;
   }
 
+  const hasYearlyData = !!data?.year && data.months.length > 0;
+
   return (
     <main className="min-h-screen bg-gray-50">
       <header className="bg-white shadow">
@@ -39,7 +41,7 @@ export default function HomePage() {
         </div>
       </header>
       <section>
-        {data ? (
+        {data && hasYearlyData ? (
           <>
             <YearlyAveragesChart data={data} />
             <DataAssumptions data={data} />

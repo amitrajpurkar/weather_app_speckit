@@ -26,4 +26,17 @@ describe('DataAssumptions', () => {
     expect(screen.getByText(/^2$/)).toBeInTheDocument();
     expect(screen.getByText(/\(1\)/)).toBeInTheDocument();
   });
+
+  it('shows None when there are no months_with_data', () => {
+    const data: YearlySummaryResponse = {
+      year: 2024,
+      months: [],
+      total_observation_count: 0,
+      months_with_data: [],
+    };
+
+    render(<DataAssumptions data={data} />);
+
+    expect(screen.getByText(/months with data \(None\)/i)).toBeInTheDocument();
+  });
 });

@@ -3,8 +3,6 @@
 from collections import Counter, defaultdict
 from typing import List, Optional
 
-import pandas as pd
-
 from ..models.weather import DailyAggregate, MonthlyTrend, WeatherObservation
 
 

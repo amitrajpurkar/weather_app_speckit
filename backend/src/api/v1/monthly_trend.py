@@ -1,11 +1,11 @@
 """API endpoint for monthly trend (daily aggregates + most common condition)."""
 
 from pathlib import Path
-from typing import List, Optional
+from typing import List
 
 from fastapi import APIRouter, HTTPException, Query
 
-from ...domain.models.weather import WeatherObservation, MonthlyTrend
+from ...domain.models.weather import WeatherObservation
 from ...domain.services.monthly_trend_service import compute_monthly_trend
 from ...infrastructure.csv_loader import load_weather_data
 from .dtos.monthly_trend_dtos import MonthlyTrendResponse, DailyAggregateDto

@@ -5,7 +5,6 @@ from typing import List
 
 from fastapi import APIRouter
 
-from ...domain.models.weather import MonthlySummary
 from ...domain.services.yearly_aggregation_service import (
     compute_yearly_monthly_averages,
     filter_to_latest_full_year,
