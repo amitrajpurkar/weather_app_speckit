@@ -79,9 +79,9 @@ description: "Task list for Monthly Weather Trends feature"
 
 ### Backend Implementation for User Story 2 (US2)
 
-- [ ] T022 [US2] Implement monthly trend service to produce `MonthlyTrend` with daily aggregates and most common condition in `backend/src/domain/services/monthly_trend_service.py`
-- [ ] T023 [US2] Implement `/api/v1/monthly-trend` FastAPI endpoint in `backend/src/api/v1/monthly_trend.py`
-- [ ] T024 [US2] Ensure deterministic tie-breaking for most common condition in `backend/src/domain/services/monthly_trend_service.py`
+- [x] T022 [US2] Implement monthly trend service to produce `MonthlyTrend` with daily aggregates and most common condition in `backend/src/domain/services/monthly_trend_service.py`
+- [x] T023 [US2] Implement `/api/v1/monthly-trend` FastAPI endpoint in `backend/src/api/v1/monthly_trend.py`
+- [x] T024 [US2] Ensure deterministic tie-breaking for most common condition in `backend/src/domain/services/monthly_trend_service.py`
 
 ### Frontend Tests for User Story 2 (US2)
 

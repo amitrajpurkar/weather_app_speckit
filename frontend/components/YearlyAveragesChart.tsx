@@ -13,7 +13,7 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
-import { YearlySummaryResponse } from '../src/lib/apiClient';
+import { YearlySummaryResponse } from '../lib/apiClient';
 
 ChartJS.register(
   CategoryScale,

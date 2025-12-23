@@ -2,7 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import YearlyAveragesChart from '../components/YearlyAveragesChart';
-import { fetchYearlySummary, YearlySummaryResponse } from '../src/lib/apiClient';
+import { fetchYearlySummary, YearlySummaryResponse } from '../lib/apiClient';
 
 export default function HomePage() {
   const [data, setData] = useState<YearlySummaryResponse | null>(null);
