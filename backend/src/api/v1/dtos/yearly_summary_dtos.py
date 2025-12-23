@@ -15,3 +15,12 @@ class MonthlySummaryDto(BaseModel):
 class YearlySummaryResponse(BaseModel):
     year: Optional[int] = Field(None, description="Year used for the summary (latest full year)")
     months: List[MonthlySummaryDto] = Field(..., description="Monthly summaries for the year")
+    total_observation_count: int = Field(
+        0,
+        ge=0,
+        description="Total number of observations included across all months in the selected year",
+    )
+    months_with_data: List[int] = Field(
+        default_factory=list,
+        description="List of month numbers (1–12) that have at least one valid observation",
+    )

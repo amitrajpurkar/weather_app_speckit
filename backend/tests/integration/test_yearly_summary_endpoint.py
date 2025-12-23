@@ -25,6 +25,8 @@ def test_yearly_summary_success(sample_csv_path: Path, monkeypatch):
     payload = response.json()
     assert "year" in payload
     assert "months" in payload
+    assert "total_observation_count" in payload
+    assert "months_with_data" in payload
     assert isinstance(payload["months"], list)
     # Sample data has months 1 and 2; expect 12 entries with some nulls
     assert len(payload["months"]) == 12
@@ -33,6 +35,11 @@ def test_yearly_summary_success(sample_csv_path: Path, monkeypatch):
         assert "avg_temperature" in month
         assert "avg_humidity" in month
         assert "observation_count" in month
+
+    assert payload["total_observation_count"] == sum(m["observation_count"] for m in payload["months"])
+    assert set(payload["months_with_data"]) == {
+        m["month"] for m in payload["months"] if m["observation_count"] > 0
+    }
 
 
 def test_yearly_summary_no_data(tmp_path: Path, monkeypatch):
@@ -46,6 +53,8 @@ def test_yearly_summary_no_data(tmp_path: Path, monkeypatch):
     payload = response.json()
     assert payload["year"] is None
     assert payload["months"] == []
+    assert payload["total_observation_count"] == 0
+    assert payload["months_with_data"] == []
 
 
 def test_health_endpoint():

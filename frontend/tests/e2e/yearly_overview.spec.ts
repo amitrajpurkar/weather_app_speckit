@@ -12,6 +12,8 @@ test.describe('Yearly Overview', () => {
             { month: 1, avg_temperature: 5, avg_humidity: 70, observation_count: 2 },
             { month: 2, avg_temperature: 6, avg_humidity: 65, observation_count: 2 },
           ],
+          total_observation_count: 4,
+          months_with_data: [1, 2],
         }),
       });
     });
@@ -32,7 +34,12 @@ test.describe('Yearly Overview', () => {
       route.fulfill({
         status: 200,
         contentType: 'application/json',
-        body: JSON.stringify({ year: null, months: [] }),
+        body: JSON.stringify({
+          year: null,
+          months: [],
+          total_observation_count: 0,
+          months_with_data: [],
+        }),
       });
     });
     await page.goto('/');

@@ -32,13 +32,17 @@ Return monthly average temperature and humidity for the latest full year.
       "avg_humidity": 72.1,
       "observation_count": 93
     }
-  ]
+  ],
+  "total_observation_count": 1123,
+  "months_with_data": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 }
 ```
 
 - **Fields**:
   - `year` (int): the year used for the summary (latest full year).
   - `months` (array of `MonthlySummaryDto`): one per month that has at least one valid observation.
+  - `total_observation_count` (int): sum of `observation_count` across all months in the response.
+  - `months_with_data` (array of int): list of month numbers (1–12) that have at least one valid observation.
 
 - **MonthlySummaryDto**:
   - `month` (int, 1–12)

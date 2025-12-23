@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import YearlyAveragesChart from '../components/YearlyAveragesChart';
 import MonthSelector from '../components/MonthSelector';
 import MonthlyTrendView from '../components/MonthlyTrendView';
+import DataAssumptions from '../components/DataAssumptions';
 import { fetchYearlySummary, YearlySummaryResponse } from '../lib/apiClient';
 
 export default function HomePage() {
@@ -41,6 +42,7 @@ export default function HomePage() {
         {data ? (
           <>
             <YearlyAveragesChart data={data} />
+            <DataAssumptions data={data} />
             <MonthSelector
               availableMonths={data.months.filter((m) => m.observation_count > 0).map((m) => m.month)}
               selectedMonth={selectedMonth}

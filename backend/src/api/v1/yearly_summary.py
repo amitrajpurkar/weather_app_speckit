@@ -59,4 +59,11 @@ def get_yearly_summary() -> YearlySummaryResponse:
     ]
 
     year = summaries[0].year if summaries else None
-    return YearlySummaryResponse(year=year, months=months)
+    total_observation_count = sum(s.observation_count for s in summaries)
+    months_with_data = [s.month for s in summaries if s.observation_count > 0]
+    return YearlySummaryResponse(
+        year=year,
+        months=months,
+        total_observation_count=total_observation_count,
+        months_with_data=months_with_data,
+    )

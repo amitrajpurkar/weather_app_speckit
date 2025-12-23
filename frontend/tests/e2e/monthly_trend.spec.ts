@@ -12,6 +12,8 @@ test.describe('Monthly Trend', () => {
             { month: 1, avg_temperature: 5, avg_humidity: 70, observation_count: 2 },
             { month: 2, avg_temperature: null, avg_humidity: null, observation_count: 0 },
           ],
+          total_observation_count: 2,
+          months_with_data: [1],
         }),
       });
     });

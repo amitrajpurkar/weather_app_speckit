@@ -108,16 +108,16 @@ description: "Task list for Monthly Weather Trends feature"
 
 ### Backend Tasks for User Story 3 (US3)
 
-- [ ] T032 [US3] Ensure backend exposes metadata about selected year and data coverage via `/api/v1/yearly-summary` (e.g., year and observation counts)
+- [x] T032 [US3] Ensure backend exposes metadata about selected year and data coverage via `/api/v1/yearly-summary` (e.g., year and observation counts)
 
 ### Frontend Tests for User Story 3 (US3)
 
-- [ ] T033 [P] [US3] Add unit tests for data assumptions/metadata UI component in `frontend/tests/unit/DataAssumptions.test.tsx`
+- [x] T033 [P] [US3] Add unit tests for data assumptions/metadata UI component in `frontend/tests/unit/DataAssumptions.test.tsx`
 
 ### Frontend Implementation for User Story 3 (US3)
 
-- [ ] T034 [US3] Implement `DataAssumptions` component in `frontend/components/DataAssumptions.tsx` describing data source, selected year, and aggregation rules
-- [ ] T035 [US3] Integrate `DataAssumptions` component into `frontend/app/page.tsx` near the charts and trend views
+- [x] T034 [US3] Implement `DataAssumptions` component in `frontend/components/DataAssumptions.tsx` describing data source, selected year, and aggregation rules
+- [x] T035 [US3] Integrate `DataAssumptions` component into `frontend/app/page.tsx` near the charts and trend views
 
 **Checkpoint**: User Story 3 complete – users can understand data assumptions and limitations from the UI.
 

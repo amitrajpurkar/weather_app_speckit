@@ -23,6 +23,8 @@ const mockData: YearlySummaryResponse = {
     { month: 11, avg_temperature: 10, avg_humidity: 75, observation_count: 60 },
     { month: 12, avg_temperature: 6, avg_humidity: 78, observation_count: 62 },
   ],
+  total_observation_count: 731,
+  months_with_data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
 };
 
 describe('YearlyAveragesChart', () => {
@@ -39,7 +41,12 @@ describe('YearlyAveragesChart', () => {
   });
 
   it('renders without crashing when data is empty', () => {
-    const emptyData: YearlySummaryResponse = { year: null, months: [] };
+    const emptyData: YearlySummaryResponse = {
+      year: null,
+      months: [],
+      total_observation_count: 0,
+      months_with_data: [],
+    };
     render(<YearlyAveragesChart data={emptyData} />);
     expect(screen.getByText(/No data available/i)).toBeInTheDocument();
   });
