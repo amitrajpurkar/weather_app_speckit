@@ -35,7 +35,7 @@ export default function DataAssumptions({ data }: Props) {
         </p>
         <p>
           Monthly trends: Daily aggregates are computed for the selected month, and the most
-          common condition is derived from the month's observations.
+          common condition is derived from the month&apos;s observations.
         </p>
       </div>
     </section>

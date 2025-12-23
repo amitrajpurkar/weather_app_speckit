@@ -26,8 +26,34 @@ This project demonstrates the use of Spec Kit to drive the development of a weat
 
 ## Getting Started
 
-To get started with this project, follow these steps:
+To run the application locally you need to start the backend (FastAPI) and the frontend (Next.js).
 
-1. Clone the repository
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run the application: `python main.py`
+### Option A (recommended): two terminals
+
+1. Backend (Terminal 1)
+
+```sh
+cd backend
+uv venv
+uv pip install -e ".[dev]"
+uv run uvicorn src.main:app --reload --port 8000
+```
+
+2. Frontend (Terminal 2)
+
+```sh
+cd frontend
+npm ci
+npm run dev
+```
+
+Open:
+
+- http://localhost:3000
+
+### Option B: run backend + frontend from a single shell
+
+```sh
+(cd backend && uv venv && uv pip install -e ".[dev]" && uv run uvicorn src.main:app --reload --port 8000) & \
+(cd frontend && npm ci && npm run dev)
+```
